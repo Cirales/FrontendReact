@@ -1,0 +1,13 @@
+# Node.js
+node_modules/
+
+# Java
+target/
+*.class
+
+# IDEs
+.vscode/
+.idea/
+
+# Logs
+*.log
