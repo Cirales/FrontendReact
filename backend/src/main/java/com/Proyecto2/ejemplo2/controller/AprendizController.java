@@ -4,9 +4,11 @@ package com.Proyecto2.ejemplo2.controller;
 import com.Proyecto2.ejemplo2.model.Aprendiz;
 import com.Proyecto2.ejemplo2.services.AprendizService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,13 +30,13 @@ public class AprendizController {
  return AprendizService.getAll();
  }
  
- @PostMapping("/modificar")
- public Aprendiz  UpdateAprendiz(@RequestBody Aprendiz aprendiz){
+ @PutMapping("/modificar")
+ public Aprendiz updateAprendiz(@RequestBody Aprendiz aprendiz) {
  return this.AprendizService.modifyAprendiz(aprendiz);
  }
  
-  @PostMapping(value="/{id}")
-  public Boolean deleteAprendiz (@PathVariable(value="id")Long id){
+  @DeleteMapping("/eliminar/{id}")
+  public Boolean deleteAprendiz (@PathVariable Long id) {
   return this.AprendizService.deleteAprendiz(id);
-  }
+ }
 }
