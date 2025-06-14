@@ -25,10 +25,6 @@ public class AprendizController {
  public Aprendiz newAprendiz(@RequestBody Aprendiz aprendiz){
      return this.AprendizService.newAprendiz(aprendiz); 
  }
- @GetMapping("/mostrar")
- public Iterable<Aprendiz> getAll(){
- return AprendizService.getAll();
- }
  
  @PutMapping("/modificar")
  public Aprendiz updateAprendiz(@RequestBody Aprendiz aprendiz) {
